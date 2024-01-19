@@ -8,13 +8,12 @@ export default function Banner({ status, setStatus }) {
 
   async function getBanner() {
     try {
-      const timestamp = new Date().getTime(); // Add a timestamp as a cache buster
       const bannerData = await makeGetRequest(
-        `banners/current?timestamp=${timestamp}`
+        `banners/current`
       );
-      console.log("Banner Data:", bannerData);
+
       setBanner(bannerData);
-      setStatus(false);
+      if (setStatus) setStatus(false);
     } catch (error) {
       console.error("Error fetching banner data:", error);
     }
@@ -28,6 +27,7 @@ export default function Banner({ status, setStatus }) {
     <div>
       {banner && (
         <Image
+          unoptimized
           src={banner.image[0]}
           alt="banner image"
           width={1000}
