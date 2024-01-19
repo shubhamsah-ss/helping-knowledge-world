@@ -34,6 +34,7 @@ export default function Banners() {
   const router = useRouter()
 
   function redirect() {
+    console.log("redirecting..")
     router.refresh();
     setOpen(false);
     getBanners();
