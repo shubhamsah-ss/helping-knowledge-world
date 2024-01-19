@@ -6,8 +6,6 @@ import { useEffect, useState } from "react";
 export default function Banner({ status, setStatus }) {
   const [banner, setBanner] = useState(null);
 
-  if (status) console.log(status);
-
   async function getBanner() {
     try {
       const timestamp = new Date().getTime(); // Add a timestamp as a cache buster
