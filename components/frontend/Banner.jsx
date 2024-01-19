@@ -11,6 +11,7 @@ export default function Banner() {
     try {
       const bannerData = await makeGetRequest("banners/current")
       console.log(bannerData)
+      setBanner(bannerData)
     } catch (error) {
       console.log(error)
     }
