@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* FRONTEND */
+.card {
+    position: relative;
+}
+
+.first {
+    transition: 0.5s;
+}
+
+.card:hover .first{
+    transform: rotateY(90deg);
+}
+
+.second {
+    position: absolute;
+    transition: 0.8s;
+    bottom: 0;
+    transform: translateY(0);
+    opacity: 0;
+}
+
+.card:hover .second {
+    bottom: 50%;
+    transform: translateY(50%);
+    opacity: 1;
+}
+
+/* ADMIN */
+.banner:hover .banner_image {
+    filter: blur(1px);
+}
+
+.banner .banner_btn {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.banner:hover .banner_btn {
+    opacity: 1;
+}
