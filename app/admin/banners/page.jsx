@@ -30,6 +30,7 @@ export default function Banners() {
   const fileRef = useRef(null);
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
+  const [bannerStatus, setBannerStatus] = useState(false);
 
   const router = useRouter()
 
@@ -38,6 +39,7 @@ export default function Banners() {
     router.refresh();
     setOpen(false);
     getBanners();
+    setBannerStatus(true)
   }
 
   const { handleSubmit } = useForm();
@@ -125,7 +127,7 @@ export default function Banners() {
       <Heading heading={"Banners"} />
       <div className="banner w-full h-full relative">
         <div className="border banner_image border-slate-400">
-          <Banner />
+          <Banner status={bannerStatus} setStatus={setBannerStatus} />
         </div>
         <p className="current_banner text-slate-400 bg-white absolute top-1 left-1 p-2 rounded-md text-base sm:text-lg">
           Current Banner
