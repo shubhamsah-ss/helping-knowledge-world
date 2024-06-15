@@ -1,21 +1,19 @@
 import db from "@/lib/db"
+import { unstable_noStore } from "next/cache"
 import { NextResponse } from "next/server"
 
 export async function GET(request) {
+  unstable_noStore()
+  
     try {
       
       const banners = await db.banners.findFirst({
-        orderBy: {
-          createdAt: "desc",
-      },
       where: {
         isActive: true,
       }
       })
       
       const response = NextResponse.json(banners)
-      response.setHeader('Cache-Control', 'no-store');
-      
       return response
     } catch (error) {
       

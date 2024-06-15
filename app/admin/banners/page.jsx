@@ -126,11 +126,13 @@ export default function Banners() {
       <Heading heading={"Banners"} />
       <div className="banner w-full h-full relative">
         <div className="border banner_image border-slate-400">
-          <Banner status={bannerStatus} setStatus={setBannerStatus} />
+          <Banner />
         </div>
-        <p className="current_banner text-slate-400 bg-white absolute top-1 left-1 p-2 rounded-md text-base sm:text-lg">
+        {
+          <p className="current_banner text-slate-400 bg-white absolute top-1 left-1 p-2 rounded-md text-base sm:text-lg">
           Current Banner
         </p>
+        }
         <Dialog open={open} onOpenChange={() => setOpen((prev) => !prev)}>
           <DialogTrigger className="banner_btn absolute top-0 right-0 py-2 px-3 mx-1 rounded-md hover:bg-yellow-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white bg-slate-100 dark:text-black flex gap-3 items-center shadow-md">
             <Camera />

@@ -3,7 +3,7 @@ import { makeGetRequest } from "@/lib/apiRequest";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function Banner({ status, setStatus }) {
+export default function Banner() {
   const [banner, setBanner] = useState(null);
 
   async function getBanner() {
@@ -13,7 +13,6 @@ export default function Banner({ status, setStatus }) {
       );
 
       setBanner(bannerData);
-      if (setStatus) setStatus(false);
     } catch (error) {
       console.error("Error fetching banner data:", error);
     }
@@ -21,7 +20,7 @@ export default function Banner({ status, setStatus }) {
 
   useEffect(() => {
     getBanner();
-  }, [status]);
+  }, []);
 
   return (
     <div>
