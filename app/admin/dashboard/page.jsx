@@ -1,7 +1,10 @@
+import Heading from '@/components/frontend/Heading'
 import React from 'react'
 
 export default function Dashboard() {
   return (
-    <div>Dashboard</div>
+    <div>
+      <Heading heading={"Dashboard"} />
+    </div>
   )
 }

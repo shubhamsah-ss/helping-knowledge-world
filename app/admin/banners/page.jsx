@@ -30,7 +30,6 @@ export default function Banners() {
   const fileRef = useRef(null);
   const [data, setData] = useState([]);
   const [open, setOpen] = useState(false);
-  const [bannerStatus, setBannerStatus] = useState(false);
 
   const router = useRouter()
 
@@ -38,7 +37,6 @@ export default function Banners() {
     router.refresh();
     setOpen(false);
     getBanners();
-    setBannerStatus(true)
   }
 
   const { handleSubmit } = useForm();

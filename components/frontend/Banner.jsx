@@ -26,12 +26,11 @@ export default function Banner() {
     <div>
       {banner && banner.image && (
         <Image
-          unoptimized
           src={banner.image[0]}
           alt="banner image"
           width={1000}
           height={1000}
-          loading="lazy"
+          loading="eager"
           className="w-full h-full md:h-[300px] lg:h-[450px] mx-auto object-contain md:object-fill"
         />
       )}
