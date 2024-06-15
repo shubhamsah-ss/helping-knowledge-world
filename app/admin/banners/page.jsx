@@ -132,7 +132,7 @@ export default function Banners() {
           Current Banner
         </p>
         <Dialog open={open} onOpenChange={() => setOpen((prev) => !prev)}>
-          <DialogTrigger className="banner_btn absolute top-0 right-0 py-2 px-3 mx-1 rounded-l-md hover:bg-yellow-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white bg-slate-100 dark:text-black flex gap-3 items-center shadow-md">
+          <DialogTrigger className="banner_btn absolute top-0 right-0 py-2 px-3 mx-1 rounded-md hover:bg-yellow-600 hover:text-white dark:hover:bg-green-600 dark:hover:text-white bg-slate-100 dark:text-black flex gap-3 items-center shadow-md">
             <Camera />
             Change Banner
           </DialogTrigger>

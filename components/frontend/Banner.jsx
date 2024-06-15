@@ -25,7 +25,7 @@ export default function Banner({ status, setStatus }) {
 
   return (
     <div>
-      {banner && (
+      {banner && banner.image && (
         <Image
           unoptimized
           src={banner.image[0]}
